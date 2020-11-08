@@ -25,7 +25,12 @@ def summonerSearchPage():
 @app.route("/<sumName>")
 def summonerRecap(sumName):
     summoner=cass.get_summoner(name=sumName)
-    return render_template('summonerRecap.html', name=sumName, level=summoner.level, rank=summoner.ranks, masteries=summoner.champion_masteries.pop(0).champion.name)
+    name=sumName
+    level=summoner.level
+    rank=summoner.ranks
+    icon=summoner.profile_icon.url
+    bestChampImage=summoner.champion_masteries.copy().pop(0).champion.skins.copy().pop(0).splash_url
+    return render_template('summonerRecap.html', name=name, level=level, rank=rank, bestChampImage=bestChampImage, icon=icon)
 
 
 if __name__ == '__main__':

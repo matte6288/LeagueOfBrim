@@ -1,0 +1,20 @@
+body{
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+h1{
+  color:#ae914b;
+}
+
+ .bottom10 {
+   margin-bottom: 10em;
+ }
+
+ .blueDiv{
+   background-color:#14555b;
+   border-style: solid;
+   border-color: #ae914b;
+ }
