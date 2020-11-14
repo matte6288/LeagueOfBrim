@@ -3,7 +3,7 @@ import cassiopeia as cass
 
 
 
-cass.set_riot_api_key("RGAPI-9272180c-3f1a-4e02-ab76-7a2b337478b5")
+cass.set_riot_api_key("RGAPI-d68fd3e9-fad3-451e-a5b9-689c8e061921")
 cass.set_default_region("NA")
 
 app = Flask(__name__)
@@ -30,7 +30,13 @@ def summonerRecap(sumName):
     rank=summoner.ranks
     icon=summoner.profile_icon.url
     bestChampImage=summoner.champion_masteries.copy().pop(0).champion.skins.copy().pop(0).splash_url
-    return render_template('summonerRecap.html', name=name, level=level, rank=rank, bestChampImage=bestChampImage, icon=icon)
+    champUrls=[]
+    champMasteriesLevels=[]
+    champMasteriesCopy=summoner.champion_masteries.copy()
+    for x in range(5):
+        champUrls.append(summoner.champion_masteries.pop(0).champion.skins.copy().pop(0).loading_image_url)
+        champMasteriesLevels.append(champMasteriesCopy.pop(0).level)
+    return render_template('summonerRecap.html', name=name, level=level, rank=rank, bestChampImage=bestChampImage, icon=icon, champUrls=champUrls, champMasteriesLevels=champMasteriesLevels)
 
 
 if __name__ == '__main__':
