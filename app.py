@@ -27,7 +27,10 @@ def summonerRecap(sumName):
     summoner=cass.get_summoner(name=sumName)
     name=sumName
     level=summoner.level
-    rank=summoner.ranks
+    rank_data=summoner.ranks
+    ranked_flex = cass.data.Queue.ranked_flex_fives
+    ranked_solo = cass.data.Queue.ranked_solo_fives
+    rank = rank_data[cass.data.Queue.ranked_solo_fives]
     icon=summoner.profile_icon.url
     bestChampImage=summoner.champion_masteries.copy().pop(0).champion.skins.copy().pop(0).splash_url
     champUrls=[]
@@ -36,6 +39,7 @@ def summonerRecap(sumName):
     for x in range(5):
         champUrls.append(summoner.champion_masteries.pop(0).champion.skins.copy().pop(0).loading_image_url)
         champMasteriesLevels.append(champMasteriesCopy.pop(0).level)
+    
     return render_template('summonerRecap.html', name=name, level=level, rank=rank, bestChampImage=bestChampImage, icon=icon, champUrls=champUrls, champMasteriesLevels=champMasteriesLevels)
 
 
