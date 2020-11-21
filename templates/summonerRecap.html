@@ -23,47 +23,49 @@
     </script>
       <script src="{{url_for('static',filename='champion.js')}}"></script>
     </head>
-    <body style="background-image: url({{champFullArtUrls[0]}});">
-      <div class="row bottom10">
-        <div></div>
+    <body style="background-image: url({{ champFullArtUrls[0] }});
+      backdrop-filter: blur(6px) grayscale();">
+      <div class="content">
+        <div class="row bottom10">
+          <div></div>
+        </div>
+        <div class="row align-items-center top10">
+          <div class="col"></div>
+          <div class="blueDiv" align="center"><h1>{{name}}</h1></div>
+          <div class="col"></div>
+        </div>
+        <div class="row align-items-center top10">
+          <div class="col"></div>
+            <div align="center"><img src="{{ icon }}" alt="Icon"></div>
+          <div class="col"></div>
+        </div>
+        <div class="row align-items-center top10">
+          <div class="col"></div>
+            <div class="blueDiv" align="center"><h1>{{rank}}</h1></div>
+          <div class="col"></div>
+        </div>
+        <div class="row align-items-center top10" style="background-color: rgba(0,0,0,0.85);">
+          <div class="col-md-1">
+          </div>
+          <div class="col-md-2 championMasteryImage" id="0">
+            <div align="center"><img src="{{ champSplashUrls[0] }}" alt="Icon" class="cmi"></div>
+          </div>
+          <div class="col-md-2 championMasteryImage" id="1">
+            <div align="center"><img src="{{ champSplashUrls[1] }}" alt="Icon" class="cmi"></div>
+          </div>
+          <div class="col-md-2 championMasteryImage" id="2">
+            <div align="center"><img src="{{ champSplashUrls[2] }}" alt="Icon" class="cmi"></div>
+          </div>
+          <div class="col-md-2 championMasteryImage" id="3">
+            <div  align="center"><img src="{{ champSplashUrls[3] }}" alt="Icon" class="cmi"></div>
+          </div>
+          <div class="col-md-2 championMasteryImage" id="4">
+            <div align="center"><img src="{{ champSplashUrls[4]}}" alt="Icon" class="cmi"></div>
+          </div>
+          <div class="col-md-1">
+          </div>
+        </div>
       </div>
-      <div class="row align-items-center top10">
-        <div class="col"></div>
-        <div class="blueDiv" align="center"><h1>{{name}}</h1></div>
-        <div class="col"></div>
-      </div>
-      <div class="row align-items-center top10">
-        <div class="col"></div>
-          <div align="center"><img src="{{ icon }}" alt="Icon"></div>
-        <div class="col"></div>
-      </div>
-      <div class="row align-items-center top10">
-        <div class="col"></div>
-          <div class="blueDiv" align="center"><h1>{{rank}}</h1></div>
-        <div class="col"></div>
-      </div>
-      <div class="row align-items-center top10" style="background-color: rgba(0,0,0,0.85);">
-        <div class="col-md-1">
-        </div>
-        <div class="col-md-2 championMasteryImage" id="0">
-          <div align="center"><img src="{{ champSplashUrls[0] }}" alt="Icon" class="cmi"></div>
-        </div>
-        <div class="col-md-2 championMasteryImage" id="1">
-          <div align="center"><img src="{{ champSplashUrls[1] }}" alt="Icon" class="cmi"></div>
-        </div>
-        <div class="col-md-2 championMasteryImage" id="2">
-          <div align="center"><img src="{{ champSplashUrls[2] }}" alt="Icon" class="cmi"></div>
-        </div>
-        <div class="col-md-2 championMasteryImage" id="3">
-          <div  align="center"><img src="{{ champSplashUrls[3] }}" alt="Icon" class="cmi"></div>
-        </div>
-        <div class="col-md-2 championMasteryImage" id="4">
-          <div align="center"><img src="{{ champSplashUrls[4]}}" alt="Icon" class="cmi"></div>
-        </div>
-        <div class="col-md-1">
-        </div>
-      </div>
-
     </body>
 
 </html>
