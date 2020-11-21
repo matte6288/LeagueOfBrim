@@ -3,7 +3,7 @@ import cassiopeia as cass
 
 
 
-cass.set_riot_api_key("RGAPI-915dd9e0-2cfe-4927-884e-0b0574bb935e")
+cass.set_riot_api_key("")
 cass.set_default_region("NA")
 
 app = Flask(__name__)
