@@ -23,11 +23,32 @@
     </script>
       <script src="{{url_for('static',filename='champion.js')}}"></script>
     </head>
-    <body style="background-image: url({{ champFullArtUrls[0] }});
-      backdrop-filter: blur(6px) grayscale();">
-      <div class="content">
-        <div class="row bottom10">
-          <div></div>
+    <body style="background-image: url({{champFullArtUrls[0]}});">
+      <div class="row bottom10">
+        <div></div>
+      </div>
+      <div class="row align-items-center top10">
+        <div class="col"></div>
+        <div class="blueDiv" align="center"><h1>{{name}}</h1></div>
+        <div class="col"></div>
+      </div>
+      <div class="row align-items-center top10">
+        <div class="col"></div>
+          <div align="center"><img src="{{ icon }}" alt="Icon" class="profile"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row align-items-center top10">
+        <div class="col"></div>
+          <div class="blueDiv" align="center"><h1>{{rank}}</h1></div>
+        <div class="col"></div>
+      </div>
+      <div class="row align-items-center top10">
+        <div class="col"></div>
+          <div align="center"><img src="{{ rankUrl }}" alt="Icon" class="rank"></div>
+        <div class="col"></div>
+      </div>
+      <div class="row align-items-center top10" style="background-color: rgba(0,0,0,0.85);">
+        <div class="col-md-1">
         </div>
         <div class="row align-items-center top10">
           <div class="col"></div>
