@@ -36,8 +36,13 @@ h1, h2{
    width:100%;
  }
 
+.name{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
  .rank{
-    width:30%;
+    width:50%;
     margin-bottom: 1em;
  }
 
@@ -46,6 +51,4 @@ h1, h2{
     border-radius: 2px;
 }
 
- .masteryIcon{
-   
- }
+
