@@ -62,16 +62,19 @@ def summonerRecap(sumName):
     champMasteriesLevels=[]
     champMasteriesPoints=[]
     champMasteryImageURLS=[]
+    champMasteryNames=[]
     champMasteriesCopy=summoner.champion_masteries.copy()
     champMasteriesCopy2=summoner.champion_masteries.copy()
     champMasteriesCopy3=summoner.champion_masteries.copy()
     champMasteriesCopy4=summoner.champion_masteries.copy()
+    champMasteriesCopy5=summoner.champion_masteries.copy()
 
     for x in range(5):
         champSplashUrls.append(champMasteriesCopy.pop(0).champion.skins.copy().pop(0).loading_image_url)
         champFullArtUrls.append(champMasteriesCopy2.pop(0).champion.skins.copy().pop(0).splash_url)
         champMasteriesLevels.append(champMasteriesCopy3.pop(0).level)
         champMasteriesPoints.append(champMasteriesCopy4.pop(0).points)
+        champMasteryNames.append(champMasteriesCopy5.pop(0).champion.name)
         champMasteryImageURLS.append("../static/champion-mastery-icons/mastery-1"+str(champMasteriesLevels[x])+".png")
 
     
@@ -79,9 +82,10 @@ def summonerRecap(sumName):
     champMasteriesCopy2=summoner.champion_masteries.copy()
     champMasteriesCopy3=summoner.champion_masteries.copy()
     champMasteriesCopy4=summoner.champion_masteries.copy()
+    champMasteriesCopy5=summoner.champion_masteries.copy()
     return render_template('summonerRecap.html', name=name, level=level, rank=rank, rankUrl=rank_url, \
         icon=icon, champFullArtUrls=champFullArtUrls, champSplashUrls=champSplashUrls, champMasteryImageURLS=champMasteryImageURLS, \
-        champMasteriesPoints=champMasteriesPoints)
+        champMasteriesPoints=champMasteriesPoints, champMasteryNames=champMasteryNames)
 
 
 if __name__ == '__main__':
