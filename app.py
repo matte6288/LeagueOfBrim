@@ -3,7 +3,7 @@ import cassiopeia as cass
 
 
 
-cass.set_riot_api_key("RGAPI-632d92f4-c5dc-4a8c-8f4f-1dba9d9cdd2e")
+cass.set_riot_api_key("RGAPI-cc2f8249-4aff-4262-8d72-55621700082a")
 cass.set_default_region("NA")
 
 app = Flask(__name__)
@@ -60,23 +60,28 @@ def summonerRecap(sumName):
     champFullArtUrls=[]
     champSplashUrls=[]
     champMasteriesLevels=[]
+    champMasteriesPoints=[]
     champMasteryImageURLS=[]
     champMasteriesCopy=summoner.champion_masteries.copy()
     champMasteriesCopy2=summoner.champion_masteries.copy()
     champMasteriesCopy3=summoner.champion_masteries.copy()
+    champMasteriesCopy4=summoner.champion_masteries.copy()
 
     for x in range(5):
         champSplashUrls.append(champMasteriesCopy.pop(0).champion.skins.copy().pop(0).loading_image_url)
         champFullArtUrls.append(champMasteriesCopy2.pop(0).champion.skins.copy().pop(0).splash_url)
         champMasteriesLevels.append(champMasteriesCopy3.pop(0).level)
+        champMasteriesPoints.append(champMasteriesCopy4.pop(0).points)
         champMasteryImageURLS.append("../static/champion-mastery-icons/mastery-1"+str(champMasteriesLevels[x])+".png")
 
     
     champMasteriesCopy=summoner.champion_masteries.copy()
     champMasteriesCopy2=summoner.champion_masteries.copy()
     champMasteriesCopy3=summoner.champion_masteries.copy()
+    champMasteriesCopy4=summoner.champion_masteries.copy()
     return render_template('summonerRecap.html', name=name, level=level, rank=rank, rankUrl=rank_url, \
-        icon=icon, champFullArtUrls=champFullArtUrls, champSplashUrls=champSplashUrls, champMasteryImageURLS=champMasteryImageURLS)
+        icon=icon, champFullArtUrls=champFullArtUrls, champSplashUrls=champSplashUrls, champMasteryImageURLS=champMasteryImageURLS, \
+        champMasteriesPoints=champMasteriesPoints)
 
 
 if __name__ == '__main__':

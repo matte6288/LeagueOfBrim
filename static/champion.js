@@ -7,6 +7,7 @@ $(document).ready(function(){
     var LoadingArt = LoadingArt0;
     var ChampArt = ChampArt0;
     var ChampMas = ChampMas0;
+    var ChampPoints=ChampMasP0;
     if($this.hasClass('stalled')){
       return false;
     }
@@ -14,22 +15,26 @@ $(document).ready(function(){
       LoadingArt=LoadingArt1;
       ChampArt=ChampArt1;
       ChampMas = ChampMas1;
+      ChampPoints=ChampMasP1;
 
     }
     else if (num==2){
       LoadingArt=LoadingArt2;
       ChampArt=ChampArt2;
       ChampMas = ChampMas2;
+      ChampPoints=ChampMasP2;
     }
     else if (num==3){
       LoadingArt=LoadingArt3;
       ChampArt=ChampArt3;
       ChampMas = ChampMas3;
+      ChampPoints=ChampMasP3;
     }
     else if (num==4){
       LoadingArt=LoadingArt4;
       ChampArt=ChampArt4;
       ChampMas = ChampMas4;
+      ChampPoints=ChampMasP4;
     }
     if (clicks) {
       // odd clicks
@@ -38,7 +43,7 @@ $(document).ready(function(){
       $this.siblings('.championMasteryImage').removeClass('col-md-1').addClass('col-md-2').removeClass('stalled');
     }else{
       // even clicks
-      $this.html("<div class='' align='center'><img src="+ChampArt+" alt='Champ0' class='cmi'><img src="+ChampMas+" alt='' class=''></div>");
+      $this.html("<div class='' align='center'><img src="+ChampArt+" alt='Champ0' class='cmi'><img src="+ChampMas+" alt='' class=''><div class='blueDiv' align='center'><h1>"+ChampPoints+"</h1></div></div>");
       $this.removeClass('col-md-2').addClass('col-md-6');
       $this.siblings('.championMasteryImage').removeClass('col-md-2').addClass('col-md-1').addClass('stalled');
    }
