@@ -1,3 +1,10 @@
+@font-face {
+  font-family: 'Friz Quadrata Std Medium';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Friz Quadrata Std Medium'), url('friz-quadrata-std-medium-5870338ec7ef8.woff') format('woff');
+  }
+
 body{
   background-repeat: no-repeat;
   background-position: center center;
@@ -21,7 +28,7 @@ h1{
    border-radius: 5px;
    margin-bottom: 10px;
    margin-top: 10px;
-   font-family: "Rockwell";
+   font-family: "Friz Quadrata Std Medium";
  }
 
  .cmi{
