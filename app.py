@@ -30,55 +30,63 @@ def summonerRecap(sumName):
     name=sumName
     level=summoner.level
     rank_data=summoner.ranks
-    solo_rank = rank_data[cass.data.Queue.ranked_solo_fives]
-    solo_rank = str(solo_rank)
-    solo_rank = solo_rank.replace("<", "")
-    solo_rank = solo_rank.replace(">", "")
-    solo_parsed_rank = solo_rank.split(" ")
-    solo_tier = solo_parsed_rank[0]
-    if (solo_tier == "Challenger"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Challenger.png"
-    elif (solo_tier == "Grandmaster"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Grandmaster.png"
-    elif (solo_tier == "Master"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Master.png"
-    elif (solo_tier == "Diamond"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Diamond.png"
-    elif (solo_tier == "Platinum"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Platinum.png"
-    elif (solo_tier == "Gold"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Gold.png"
-    elif (solo_tier == "Silver"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Silver.png"
-    elif (solo_tier == "Bronze"):
-        solo_rank_url = "../static/ranked-emblems/Emblem_Bronze.png"
+    if cass.data.Queue.ranked_solo_fives in rank_data:
+        solo_rank = rank_data[cass.data.Queue.ranked_solo_fives]
+        solo_rank = str(solo_rank)
+        solo_rank = solo_rank.replace("<", "")
+        solo_rank = solo_rank.replace(">", "")
+        solo_parsed_rank = solo_rank.split(" ")
+        solo_tier = solo_parsed_rank[0]
+        if (solo_tier == "Challenger"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Challenger.png"
+        elif (solo_tier == "Grandmaster"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Grandmaster.png"
+        elif (solo_tier == "Master"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Master.png"
+        elif (solo_tier == "Diamond"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Diamond.png"
+        elif (solo_tier == "Platinum"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Platinum.png"
+        elif (solo_tier == "Gold"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Gold.png"
+        elif (solo_tier == "Silver"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Silver.png"
+        elif (solo_tier == "Bronze"):
+            solo_rank_url = "../static/ranked-emblems/Emblem_Bronze.png"
+        else:
+            solo_rank_url = "../static/ranked-emblems/Emblem_Iron.png"
     else:
-        solo_rank_url = "../static/ranked-emblems/Emblem_Iron.png"
+        solo_rank = "Unranked"
+        solo_rank_url = "../static/ranked-emblems/unranked.png"
 
-    flex_rank = rank_data[cass.data.Queue.ranked_flex_fives]
-    flex_rank = str(flex_rank)
-    flex_rank = flex_rank.replace("<", "")
-    flex_rank = flex_rank.replace(">", "")
-    flex_parsed_rank = flex_rank.split(" ")
-    flex_tier = flex_parsed_rank[0]
-    if (flex_tier == "Challenger"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Challenger.png"
-    elif (flex_tier == "Grandmaster"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Grandmaster.png"
-    elif (flex_tier == "Master"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Master.png"
-    elif (flex_tier == "Diamond"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Diamond.png"
-    elif (flex_tier == "Platinum"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Platinum.png"
-    elif (flex_tier == "Gold"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Gold.png"
-    elif (flex_tier == "Silver"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Silver.png"
-    elif (flex_tier == "Bronze"):
-        flex_rank_url = "../static/ranked-emblems/Emblem_Bronze.png"
+    if cass.data.Queue.ranked_flex_fives in rank_data:
+        flex_rank = rank_data[cass.data.Queue.ranked_flex_fives]
+        flex_rank = str(flex_rank)
+        flex_rank = flex_rank.replace("<", "")
+        flex_rank = flex_rank.replace(">", "")
+        flex_parsed_rank = flex_rank.split(" ")
+        flex_tier = flex_parsed_rank[0]
+        if (flex_tier == "Challenger"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Challenger.png"
+        elif (flex_tier == "Grandmaster"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Grandmaster.png"
+        elif (flex_tier == "Master"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Master.png"
+        elif (flex_tier == "Diamond"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Diamond.png"
+        elif (flex_tier == "Platinum"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Platinum.png"
+        elif (flex_tier == "Gold"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Gold.png"
+        elif (flex_tier == "Silver"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Silver.png"
+        elif (flex_tier == "Bronze"):
+            flex_rank_url = "../static/ranked-emblems/Emblem_Bronze.png"
+        else:
+            flex_rank_url = "../static/ranked-emblems/Emblem_Iron.png"
     else:
-        flex_rank_url = "../static/ranked-emblems/Emblem_Iron.png"
+        flex_rank = "Unranked"
+        flex_rank_url = "../static/ranked-emblems/unranked.png"
 
     icon=summoner.profile_icon.url
 
