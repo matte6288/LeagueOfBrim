@@ -1,7 +1,7 @@
 
 $(document).ready(function() {
     fade1();
-    setTimeout(fade2, 3000);
+    setTimeout(fade2, 1000);
 });
 
 function fade1(){
