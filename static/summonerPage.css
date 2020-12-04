@@ -45,6 +45,12 @@ h1, h2{
    text-shadow: 1px 1px 1px #000000;
  }
 
+ .homeLogo{
+   width: 5%;
+   margin-left:20px;
+   margin-top:20px;
+ }
+
  .title{
   font-family: "Friz Quadrata Std Medium";
   font-size: 700%;
@@ -83,5 +89,10 @@ h1, h2{
 
 .fade {
   opacity: 0;
+}
+
+.invis {
+  margin-top: 200px;
+  color: white;
 }
 
