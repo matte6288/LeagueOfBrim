@@ -15,3 +15,28 @@
     padding-right: 30px;
     outline: none;
 }
+
+p{
+    top: 50%;
+    width: 100%;
+    color: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0);
+    font-family: "Courier New", Courier, monospace;
+    font-size: 60px;
+    font-weight: 300;
+    text-align: center;
+    border: 0px;
+    margin: 0px auto;
+    margin-top:10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+}
+
+.title{
+    opacity: 0;
+}
+
+.search{
+    opacity: 0;
+}

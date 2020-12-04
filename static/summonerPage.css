@@ -29,6 +29,10 @@ h1, h2{
   margin-bottom: 20em;
  }
 
+ .top15{
+    margin-top:15em;
+ }
+
  .blueDiv{
    background-color:#14555b;
    border-style: solid;
